@@ -13,11 +13,12 @@ It captures website visitors’ platform, language, browser, and timestamp — t
 
 | Page            | URL |
 |-----------------|-----|
-| 🔍 Tracking Page | http://visitor-analytics-manu.s3-website-us-east-1.amazonaws.com |
-| 📊 Dashboard     | http://visitor-analytics-manu.s3-website-us-east-1.amazonaws.com/dashboard.html |
+| 🔍 Tracking Page | https://visitor-analytics-demo-manu.s3.us-east-1.amazonaws.com/index.html |
+| 📊 Dashboard     | https://visitor-analytics-demo-manu.s3.us-east-1.amazonaws.com/dashboard.html |
 
 
 ## 📦 Project Structure
+
 visitor-analytics-dashboard/
 ├── backend/
 │ └── lambda/
