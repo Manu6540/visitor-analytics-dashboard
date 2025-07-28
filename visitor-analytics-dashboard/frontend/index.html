@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tracking Page</title>
+  <script>
+    const data = {
+      userAgent: navigator.userAgent,
+      platform: navigator.platform,
+      language: navigator.language,
+      timestamp: new Date().toISOString()
+    };
+    fetch("https://your-api-id.execute-api.amazonaws.com/collect", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    }).then(res => console.log("Visitor data sent:", res));
+  </script>
+</head>
+<body>
+  <h1>Welcome to My Tracked Site</h1>
+</body>
+</html>
