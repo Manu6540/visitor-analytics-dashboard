@@ -1,4 +1,7 @@
-[Visitor Dashboard Preview](dashboard-preview.png)
+![Project Status](https://img.shields.io/badge/status-completed-brightgreen)
+![Built With](https://img.shields.io/badge/built%20with-AWS%20Lambda%20%7C%20S3%20%7C%20DynamoDB-blue)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
 
 # 🛰️ Real-Time Visitor Analytics Dashboard (AWS Serverless)
 
