@@ -1,4 +1,4 @@
-![Visitor Dashboard Preview](dashboard-preview.png)
+[Visitor Dashboard Preview](dashboard-preview.png)
 
 # 🛰️ Real-Time Visitor Analytics Dashboard (AWS Serverless)
 
