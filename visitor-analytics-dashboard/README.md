@@ -1,44 +1,49 @@
 # 🛰️ Real-Time Visitor Analytics Dashboard (AWS Serverless)
 
-A real-time visitor tracking system built with AWS: S3, API Gateway, Lambda (Python), and DynamoDB.
+A fully serverless real-time visitor tracking system built using **Amazon S3**, **API Gateway**, **AWS Lambda (Python)**, and **DynamoDB**.
 
-## Features
+It captures website visitors’ platform, language, browser, and timestamp — then visualizes it live in a simple HTML dashboard.
 
-- Tracks real-time visitor metadata (browser, OS, language, time)
-- Stores each visit in DynamoDB using serverless Lambda
-- Simple dashboard to view recent visitors
-- Extendable for IP logging, charts, geolocation, etc.
+## 🚀 Live Demo
 
-## Technologies Used
+| Page            | URL |
+|-----------------|-----|
+| 🔍 Tracking Page | http://visitor-analytics-manu.s3-website-us-east-1.amazonaws.com |
+| 📊 Dashboard     | http://visitor-analytics-manu.s3-website-us-east-1.amazonaws.com/dashboard.html |
 
-- Amazon S3 (Frontend Hosting)
-- AWS Lambda (Backend Code)
-- API Gateway (HTTP API v2)
-- DynamoDB (NoSQL Storage)
-- IAM Roles + CORS Config
 
-## Folder Structure
-
-```
+## 📦 Project Structure
 visitor-analytics-dashboard/
 ├── backend/
-│   └── lambda/
-│       ├── TrackVisitorFunction.py
-│       └── GetVisitorLogs.py
+│ └── lambda/
+│ ├── TrackVisitorFunction.py
+│ └── GetVisitorLogs.py
 ├── frontend/
-│   ├── index.html
-│   └── dashboard.html
+│ ├── index.html
+│ └── dashboard.html
 ├── README.md
-```
 
-## Setup Guide
 
-1. Deploy Lambda functions in AWS Console
-2. Create HTTP API Gateways (POST /collect and GET /visitors)
-3. Create DynamoDB table named `VisitorLogs` with partition key `visitorId`
-4. Upload HTML files to S3 bucket and enable static hosting
-5. Update fetch URLs in HTML files with your actual API Gateway endpoints
+## ✅ Features
+- Real-time tracking of visitors (OS, language, browser)
+- All visits stored in DynamoDB
+- Visual dashboard showing each visitor as a table row
+- Redirect-based GitHub/LinkedIn tracking (optional)
+- 100% Serverless, secure, scalable
 
-## License
+## 🧠 How It Works
+1. Visitor loads `index.html` hosted on S3
+2. JS sends metadata to API Gateway → Lambda → DynamoDB
+3. `dashboard.html` fetches data from another Lambda via GET
+4. Dashboard shows all visits in real-time
 
-MIT License
+## 🧰 AWS Services Used
+- S3
+- API Gateway
+- Lambda
+- DynamoDB
+- IAM
+- CloudWatch
+
+## 🙌 Author
+Created by **Manmohan**
