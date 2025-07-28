@@ -1,3 +1,5 @@
+![Visitor Dashboard Preview](dashboard-preview.png)
+
 # 🛰️ Real-Time Visitor Analytics Dashboard (AWS Serverless)
 
 A fully serverless real-time visitor tracking system built using **Amazon S3**, **API Gateway**, **AWS Lambda (Python)**, and **DynamoDB**.
