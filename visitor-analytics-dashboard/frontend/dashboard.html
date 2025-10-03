@@ -1,29 +1,77 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
-  <title>Visitor Dashboard</title>
+  <title>Visitor Analytics Dashboard</title>
   <style>
-    body { font-family: Arial; padding: 20px; }
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background: #f0f0f0; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #f0f0f0;
+    }
   </style>
 </head>
 <body>
-  <h1>📊 Visitor Dashboard</h1>
-  <table><thead><tr>
-    <th>Timestamp</th><th>Platform</th><th>Language</th><th>User Agent</th>
-  </tr></thead><tbody id="visitorTable"></tbody></table>
+  <h1> Real-Time Visitor Analytics Dashboard</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Timestamp (IST)</th>
+        <th>Platform</th>
+        <th>Language</th>
+        <th>User Agent</th>
+      </tr>
+    </thead>
+    <tbody id="visitorTable">
+      <tr><td colspan="4">Loading visitor data...</td></tr>
+    </tbody>
+  </table>
+
   <script>
-    fetch("https://your-api-id.execute-api.amazonaws.com/visitors")
+    fetch("https://so6thchm5i.execute-api.us-east-1.amazonaws.com/visitors")  // your API URL
       .then(res => res.json())
       .then(data => {
         const table = document.getElementById("visitorTable");
-        data.forEach(v => {
-          table.innerHTML += `<tr>
-            <td>${v.timestamp}</td><td>${v.platform}</td>
-            <td>${v.language}</td><td>${v.userAgent}</td></tr>`;
+        table.innerHTML = "";
+
+        data.forEach(visitor => {
+          const timestampIST = new Date(visitor.timestamp).toLocaleString("en-IN", {
+            timeZone: "Asia/Kolkata"
+          });
+
+          // Extract only inside brackets, else fallback to full UA
+          const cleanUA = visitor.userAgent.match(/\((.*?)\)/)?.[1] || visitor.userAgent;
+
+          const row = `<tr>
+            <td>${timestampIST}</td>
+            <td>${visitor.platform}</td>
+            <td>${visitor.language}</td>
+            <td>${cleanUA}</td>
+          </tr>`;
+          table.innerHTML += row;
         });
+      })
+      .catch(err => {
+        document.getElementById("visitorTable").innerHTML =
+          `<tr><td colspan="4">Error loading data</td></tr>`;
+        console.error("Fetch error:", err);
       });
   </script>
 </body>
