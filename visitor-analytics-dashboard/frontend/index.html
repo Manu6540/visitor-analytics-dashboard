@@ -1,22 +1,44 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tracking Page</title>
+  <title>Manmohan Bandaru - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Manmohan Bandaru</h1>
+    <p>AWS | Cloud | Developer</p>
+  </header>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, Im Manmohan. I build AWS-powered applications and cloud projects.</p>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>Real-Time Visitor Analytics Dashboard (AWS)</li>
+      <li>Other AWS Projects...</li>
+    </ul>
+  </section>
+  <footer>
+    <p>Contact: manmohanbandaru6@gmail.com</p>
+  </footer>
+  <!-- Visitor Tracking Script -->
   <script>
-    const data = {
+    const visitorData = {
       userAgent: navigator.userAgent,
       platform: navigator.platform,
       language: navigator.language,
       timestamp: new Date().toISOString()
     };
-    fetch("https://your-api-id.execute-api.amazonaws.com/collect", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    }).then(res => console.log("Visitor data sent:", res));
+    fetch('https://7t3imjpvu8.execute-api.us-east-1.amazonaws.com/collect', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(visitorData)
+    })
+    .then(response => console.log('Data sent:', response))
+    .catch(error => console.error('Error:', error));
   </script>
-</head>
-<body>
-  <h1>Welcome to My Tracked Site</h1>
 </body>
 </html>
