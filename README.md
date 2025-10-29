@@ -26,10 +26,13 @@ visitor-analytics-dashboard/
 │ └── lambda/
 
 │ ├── TrackVisitorFunction.py
+
 │ └── GetVisitorLogs.py
 
 ├── frontend/
+
 │ ├── index.html
+
 │ └── dashboard.html
 
 ├── README.md
