@@ -60,4 +60,4 @@ visitor-analytics-dashboard/
 - CloudWatch
 
 ## 🙌 Author
-Created by **Manmohan**
+Created by **Manmohan Bandaru**
