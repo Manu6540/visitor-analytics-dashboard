@@ -13,20 +13,25 @@ It captures website visitors’ platform, language, browser, and timestamp — t
 
 | Page            | URL |
 |-----------------|-----|
-| 🔍 Tracking Page | https://visitor-analytics-demo-manu.s3.us-east-1.amazonaws.com/index.html |
+| 🔍 Tracking Page | https://visitor-analytics-demo-manu.s3.us-east-1.amazonaws.com/index+(1).html |
 | 📊 Dashboard     | https://visitor-analytics-demo-manu.s3.us-east-1.amazonaws.com/dashboard.html |
 
 
 ## 📦 Project Structure
 
 visitor-analytics-dashboard/
+
 ├── backend/
+
 │ └── lambda/
+
 │ ├── TrackVisitorFunction.py
 │ └── GetVisitorLogs.py
+
 ├── frontend/
 │ ├── index.html
 │ └── dashboard.html
+
 ├── README.md
 
 
